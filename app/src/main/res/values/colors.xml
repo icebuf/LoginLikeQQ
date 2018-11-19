@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="transparent">#00000000</color>
+
+    <color name="white">#ffffff</color>
+
+    <color name="qq_white">#f8fefe</color>
+
+    <color name="alpha50_white">#80ffffff</color>
+
+    <color name="alpha70_white">#b0ffffff</color>
+
+    <color name="alpha70_green">#c0279de0</color>
+
+    <color name="alpha90_green">#d027ade0</color>
+    <color name="alpha40_green">#7027ade0</color>
+</resources>
