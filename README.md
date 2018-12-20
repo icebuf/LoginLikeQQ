@@ -8,14 +8,11 @@
 
 
 <div align="center">
+  
 <img src="screenshots/login_main.jpg" height="600" width="360" >
-</div>
 
-<div align="center">
 <img src="screenshots/login_drop_down.jpg" height="600" width="360" >
-</div>
 
-<div align="center">
 <img src="screenshots/login_account_selected.jpg" height="600" width="360" >
 </div>
 
