@@ -60,21 +60,22 @@
                 android:id="@+id/iv_clear_account"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:layout_toStartOf="@id/iv_login_drop_down"
+                android:layout_toStartOf="@id/cb_login_drop_down"
                 android:layout_centerVertical="true"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="10dp"
                 android:src="@mipmap/clear" />
 
-            <ImageView
-                android:id="@+id/iv_login_drop_down"
+            <CheckBox
+                android:id="@+id/cb_login_drop_down"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="10dp"
-                android:src="@mipmap/drop_down"/>
+                android:background="@drawable/account_drop_down"
+                android:button="@null"/>
 
         </RelativeLayout>
 

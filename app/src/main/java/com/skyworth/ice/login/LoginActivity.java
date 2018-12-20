@@ -1,13 +1,9 @@
 package com.skyworth.ice.login;
 
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -27,20 +23,17 @@ import com.skyworth.ice.login.bean.UserBean;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 public class LoginActivity extends AppCompatActivity {
 
     private static final String TAG = LoginActivity.class.getSimpleName();
-
-    private static final int KEY_ACCOUNT_WINDOW = 1;
 
     private EditText mAccountView;
     private EditText mPasswordView;
     private ImageView mClearAccountView;
     private ImageView mClearPasswordView;
     private CheckBox mEyeView;
-    private ImageView mDropDownView;
+    private CheckBox mDropDownView;
     private Button mLoginView;
     private TextView mForgetPsdView;
     private TextView mRegisterView;
@@ -108,15 +101,24 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        mDropDownView.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    //下拉按钮点击的时候，密码栏、忘记密码、新用户注册、同意服务条款先全部隐藏
+                    setDropDownVisible(View.INVISIBLE);
+                    //下拉箭头变为上拉箭头
+                    //弹出一个popupWindow
+                    showDropDownWindow();
+                }else {
+                    setDropDownVisible(View.VISIBLE);
+                }
+            }
+        });
         mDropDownView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //下拉按钮点击的时候，密码栏、忘记密码、新用户注册、同意服务条款先全部隐藏
-                setDropDownVisible(View.INVISIBLE);
-                //下拉箭头变为上拉箭头
-                mDropDownView.setSelected(true);
-                //弹出一个popupWindow
-                showDropDownWindow();
+
             }
         });
 
@@ -124,6 +126,13 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 showFindPsdDialog();
+            }
+        });
+
+        mTermsView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //进入服务条款界面
             }
         });
     }
@@ -136,7 +145,7 @@ public class LoginActivity extends AppCompatActivity {
         mClearAccountView = findViewById(R.id.iv_clear_account);
         mClearPasswordView = findViewById(R.id.iv_clear_password);
         mEyeView = findViewById(R.id.iv_login_open_eye);
-        mDropDownView = findViewById(R.id.iv_login_drop_down);
+        mDropDownView = findViewById(R.id.cb_login_drop_down);
         mLoginView = findViewById(R.id.btn_login);
         mForgetPsdView = findViewById(R.id.tv_forget_password);
         mRegisterView = findViewById(R.id.tv_register_account);
@@ -178,8 +187,9 @@ public class LoginActivity extends AppCompatActivity {
         userListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                //当下拉列表条目被点击时，显示刚才被隐藏视图
-                setDropDownVisible(View.VISIBLE);
+                //当下拉列表条目被点击时，显示刚才被隐藏视图,下拉箭头变上拉箭头
+                //相当于mDropDownView取消选中
+                mDropDownView.setChecked(false);
                 //账号栏和密码栏文本更新
                 UserBean checkedUser = adapter.getItem(position);
                 mAccountView.setText(checkedUser.getAccount());
@@ -203,8 +213,9 @@ public class LoginActivity extends AppCompatActivity {
         window.setOnDismissListener(new PopupWindow.OnDismissListener() {
             @Override
             public void onDismiss() {
-                //当点击popupWindow之外区域导致window关闭时，显示刚才被隐藏视图
-                setDropDownVisible(View.VISIBLE);
+                //当点击popupWindow之外区域导致window关闭时，显示刚才被隐藏视图，下拉箭头变上拉箭头
+                //相当于mDropDownView取消选中
+                mDropDownView.setChecked(false);
             }
         });
 
