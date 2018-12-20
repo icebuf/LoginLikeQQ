@@ -6,11 +6,11 @@
 
 # 效果图
 
-![mahua](login_main.jpg)
+![mahua](screenshots/login_main.jpg)
 
-![mahua](login_drop_down.jpg)
+![mahua](screenshots/login_drop_down.jpg)
 
-![mahua](login_account_selected.jpg)
+![mahua](screenshots/login_account_selected.jpg)
 
 ##功能
 
