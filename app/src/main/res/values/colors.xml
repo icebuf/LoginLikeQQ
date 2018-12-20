@@ -16,6 +16,11 @@
 
     <color name="alpha70_green">#c0279de0</color>
 
-    <color name="alpha90_green">#d027ade0</color>
-    <color name="alpha40_green">#7027ade0</color>
+    <color name="alpha90_green">#d027a8f0</color>
+    <color name="alpha40_green">#7027a8f0</color>
+
+    <color name="light_green">#90df24</color>
+
+    <color name="alpha50_light_green">#8090df24</color>
+
 </resources>

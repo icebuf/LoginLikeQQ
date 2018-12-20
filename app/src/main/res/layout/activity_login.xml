@@ -8,12 +8,12 @@
     android:background="@mipmap/bg_login_01">
 
     <LinearLayout
+        android:id="@+id/ll_title_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginStart="22dp"
-        android:layout_above="@id/login_content_layout"
-        android:layout_marginBottom="60dp">
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="80dp">
 
         <ImageView
             android:layout_width="wrap_content"
@@ -30,12 +30,12 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/login_content_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="22dp"
-        android:layout_marginEnd="22dp"
-        android:layout_centerVertical="true"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:layout_below="@id/ll_title_layout"
+        android:layout_marginTop="43dp"
         android:orientation="vertical">
 
         <RelativeLayout
@@ -45,20 +45,23 @@
             android:orientation="horizontal">
 
             <EditText
-                style="@style/QQLoginEditText"
+                android:id="@+id/et_input_account"
+                style="@style/LoginEditTextTheme"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="@dimen/input_account_edit_text_height"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_marginEnd="10dp"
                 android:layout_toStartOf="@+id/iv_clear_account"
-                android:hint="@string/input_account" />
+                android:hint="@string/input_account"
+                android:inputType="number" />
 
             <ImageView
                 android:id="@+id/iv_clear_account"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_toStartOf="@id/iv_login_drop_down"
+                android:layout_centerVertical="true"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="10dp"
                 android:src="@mipmap/clear" />
@@ -68,6 +71,7 @@
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="10dp"
                 android:src="@mipmap/drop_down"/>
@@ -75,49 +79,57 @@
         </RelativeLayout>
 
         <RelativeLayout
+            android:id="@+id/rl_password_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:background="@drawable/underline">
 
             <EditText
-                style="@style/QQLoginEditText"
+                android:id="@+id/et_input_password"
+                style="@style/LoginEditTextTheme"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="@dimen/input_account_edit_text_height"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_marginEnd="10dp"
                 android:layout_toStartOf="@id/iv_clear_password"
-                android:hint="@string/input_password" />
+                android:hint="@string/input_password"
+                android:inputType="textPassword"
+                android:longClickable="false"
+                />
 
             <ImageView
                 android:id="@+id/iv_clear_password"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_toStartOf="@id/iv_login_open_eye"
+                android:layout_centerVertical="true"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="10dp"
                 android:src="@mipmap/clear" />
 
-            <ImageView
+            <CheckBox
                 android:id="@+id/iv_login_open_eye"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="10dp"
-                android:src="@drawable/password_eye"/>
+                android:background="@drawable/password_eye"
+                android:button="@null" />
 
         </RelativeLayout>
 
         <Button
             android:id="@+id/btn_login"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="38dp"
             android:layout_marginTop="22dp"
             android:text="@string/login"
             android:textColor="@android:color/white"
-            android:textSize="22sp"
+            android:textSize="20sp"
             android:background="@drawable/bg_btn_login"
             style="?android:attr/borderlessButtonStyle" />
 
@@ -126,6 +138,7 @@
             android:layout_height="wrap_content">
 
             <TextView
+                android:id="@+id/tv_forget_password"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -133,6 +146,7 @@
                 style="@style/ClickableTextView" />
 
             <TextView
+                android:id="@+id/tv_register_account"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
@@ -145,6 +159,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/ll_terms_of_service_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -160,14 +175,14 @@
             android:textColor="@android:color/white"
              />
 
-        <Button
+        <TextView
+            android:id="@+id/tv_terms_of_service"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@null"
-            android:button="@null"
             android:gravity="start|center_vertical"
             android:text="@string/login_terms_of_service"
-            android:textColor="@drawable/bg_hypertext"/>
+            android:textColor="@drawable/bg_hypertext"
+            style="@style/ClickableTextView"/>
 
     </LinearLayout>
 

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="input_account_edit_text_height">50dp</dimen>
+
+</resources>

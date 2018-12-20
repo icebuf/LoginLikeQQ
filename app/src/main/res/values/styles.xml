@@ -6,8 +6,6 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="windowNoTitle">true</item>
-        <item name="android:windowFullscreen">true</item>
     </style>
 
     <style name="FullScreenTheme" parent="Theme.AppCompat.Light.NoActionBar">
@@ -23,14 +21,39 @@
         <item name="colorControlActivated">@color/transparent</item>
     </style>
 
-    <style name="QQLoginEditText">
-        <item name="android:textColor">@color/qq_white</item>
-        <item name="android:textColorHint">@color/alpha70_white</item>
-        <item name="android:theme">@style/Theme.Custom.Control.EditText</item>
-        <item name="android:maxLines">1</item><!--最多显示1行-->
-        <item name="android:scrollbars">vertical</item> <!--垂直滚动条-->
-        <item name="android:singleLine">true</item><!--单行?-->
 
+    <style name="AccountTextStyle">
+
+        <item name="android:textColor">@color/qq_white</item>
+
+        <item name="android:textSize">20sp</item>
+        <!--最多显示1行-->
+        <item name="android:maxLines">1</item>
+        <!--垂直滚动条-->
+        <item name="android:scrollbars">vertical</item>
+        <!--单行?-->
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="LoginEditTextTheme" parent="AccountTextStyle">
+
+        <item name="android:textColorHint">@color/alpha70_white</item>
+        <!--光标颜色-->
+        <item name="android:textCursorDrawable">@drawable/cursor</item>
+        <item name="android:theme">@style/Theme.Custom.Control.EditText</item>
+        <!--下划线颜色-->
+        <item name="android:backgroundTint">@color/transparent</item>
+        <!--选中文本的背景颜色-->
+        <item name="android:textColorHighlight">@color/alpha50_light_green</item>
+        <!--<item name="android:textSelectHandle">@color/alpha90_green</item>-->
+        <!--小水滴图标-->
+        <item name="android:textSelectHandleLeft">@drawable/custom_text_select_handle_left_material</item>
+        <item name="android:textColorHighlightInverse">@drawable/custom_text_select_handle_middle_material</item>
+        <item name="android:textSelectHandleRight">@drawable/custom_text_select_handle_right_material</item>
+        <!--行间距 默认间距的倍数-->
+        <!--android:lineSpacingMultiplier="20"-->
+        <!--行间距 固定值-->
+        <!--<item name="android:lineSpacingExtra">10dp</item>-->
     </style>
 
     <!--textView默认不获取焦点，所以点击不起作用-->
